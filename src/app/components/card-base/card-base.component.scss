@@ -1,0 +1,31 @@
+.character-card {
+  max-width: 300px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  mat-card-header {
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 16px;
+    margin: -16px -16px 16px -16px;
+  }
+  
+  img {
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  mat-card-content {
+    padding-top: 16px;
+    
+    p {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+  }
+}

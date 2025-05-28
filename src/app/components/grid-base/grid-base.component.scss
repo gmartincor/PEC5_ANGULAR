@@ -1,0 +1,46 @@
+.character-table {
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  .character-thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 5px 0;
+  }
+  
+  .character-row {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+  }
+  
+  .status-alive {
+    color: #4caf50;
+    font-weight: 500;
+  }
+  
+  .status-dead {
+    color: #f44336;
+    font-weight: 500;
+  }
+  
+  .status-unknown {
+    color: #ff9800;
+    font-weight: 500;
+  }
+  
+  th {
+    font-weight: 600;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  
+  td {
+    font-size: 14px;
+  }
+}

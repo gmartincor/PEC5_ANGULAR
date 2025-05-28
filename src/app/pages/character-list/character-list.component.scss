@@ -1,0 +1,57 @@
+.character-list-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .content {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+  
+  .table-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+  }
+}
+
+mat-button-toggle-group {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  
+  mat-button-toggle {
+    color: white;
+    
+    &.mat-button-toggle-checked {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
