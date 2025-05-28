@@ -60,13 +60,8 @@
 
               <div class="stat-item">
                 <h3>Experience Points</h3>
-                <mat-slider
-                  [max]="1000"
-                  [min]="0"
-                  [step]="10"
-                  [value]="character.experiencePoints"
-                  thumbLabel
-                  disabled>
+                <mat-slider [max]="1000" [min]="0" [step]="10" [disabled]="true">
+                  <input matSliderThumb [value]="character?.experiencePoints || 0">
                 </mat-slider>
                 <p>{{ character.experiencePoints }} XP</p>
               </div>
@@ -114,7 +109,7 @@
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <p>This character appears in {{ character.episode.length }} episodes.</p>
-              <p class="episode-list">Episodes: {{ character.episode.slice(0, 5).map(e => e.split('/').pop()).join(', ') }}{{ character.episode.length > 5 ? '...' : '' }}</p>
+              <p class="episode-list">Episodes: {{ getEpisodeNumbers() }}</p>
             </mat-expansion-panel>
           </div>
         </mat-tab>

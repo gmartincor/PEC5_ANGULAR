@@ -1,11 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RickMortyService } from '../../services/rick-morty.service';
 import { Character } from '../../models/character';
+import { CardBaseComponent } from '../../components/card-base/card-base.component';
+import { GridBaseComponent } from '../../components/grid-base/grid-base.component';
 import { trigger, style, transition, animate, stagger, query } from '@angular/animations';
 
 @Component({
   selector: 'app-character-list',
+  standalone: true,
+  imports: [
+    CommonModule,
+    MatToolbarModule,
+    MatButtonToggleModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    CardBaseComponent,
+    GridBaseComponent
+  ],
   templateUrl: './character-list.component.html',
   styleUrls: ['./character-list.component.scss'],
   animations: [

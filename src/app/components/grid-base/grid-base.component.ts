@@ -1,9 +1,13 @@
 import { Component, Input, Output, EventEmitter, ViewChild, AfterViewInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
 import { MatTableDataSource } from '@angular/material/table';
 import { Character } from '../../models/character';
 
 @Component({
   selector: 'app-grid-base',
+  standalone: true,
+  imports: [CommonModule, MatTableModule],
   templateUrl: './grid-base.component.html',
   styleUrls: ['./grid-base.component.scss']
 })

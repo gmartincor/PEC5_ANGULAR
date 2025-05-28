@@ -1,5 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { RickMortyService } from '../../services/rick-morty.service';
 import { Character } from '../../models/character';
 import { trigger, state, style, transition, animate } from '@angular/animations';
@@ -19,6 +29,19 @@ interface FlatNode {
 
 @Component({
   selector: 'app-character-detail',
+  standalone: true,
+  imports: [
+    CommonModule,
+    MatTabsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatProgressBarModule,
+    MatSliderModule,
+    MatTreeModule,
+    MatExpansionModule,
+    MatProgressSpinnerModule,
+    MatToolbarModule
+  ],
   templateUrl: './character-detail.component.html',
   styleUrls: ['./character-detail.component.scss'],
   animations: [
@@ -127,5 +150,15 @@ export class CharacterDetailComponent implements OnInit {
 
   goBack(): void {
     this.router.navigate(['/']);
+  }
+
+  getEpisodeNumbers(): string {
+    if (!this.character?.episode) return '';
+    const episodes = this.character.episode.slice(0, 5).map(url => {
+      const parts = url.split('/');
+      return parts[parts.length - 1];
+    });
+    const result = episodes.join(', ');
+    return this.character.episode.length > 5 ? result + '...' : result;
   }
 }
